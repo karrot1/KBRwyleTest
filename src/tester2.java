@@ -37,7 +37,22 @@ public class tester2 {
 		Circle circle = new Circle(3);
 		double area = 3*3*Math.PI;
 		assertEquals(area, circle.getArea(),  0.0002);
+	}
+	@Test
+	public void EllipseTestPerim(){
+		double axis1=3;
+		double axis2=4;
+		ellipse elipse = new ellipse(axis1, axis2);
+		double h = ((axis1-axis2)*(axis1-axis2))/((axis1+axis2)*(axis1+axis2));
+		double perim = Math.PI * (axis1+axis2)*(1+ (h/4) + (h*h)/64 + (h*h*h)/256);
+		assertEquals(perim, elipse.getPerimeter(),  0.0002);
 	}@Test
+	public void EllipseTestArea(){
+		ellipse elipse = new ellipse(3, 4);
+		double area = 3*4*Math.PI;
+		assertEquals(area, elipse.getArea(),  0.0002);
+	}
+	@Test
 	public void RectangleTestPerim(){
 		Rectangle rectangle = new Rectangle(2, 3);
 		double perimiter =3+3+2+2;
